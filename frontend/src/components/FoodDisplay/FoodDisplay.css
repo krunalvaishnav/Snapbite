@@ -1,0 +1,237 @@
+.food-display {
+    margin-top: 30px;
+    display: flex; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.filter {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    flex: 1;
+    margin-top: 50px;
+    position: sticky; 
+    top: 50px; 
+    align-self: flex-start;
+    max-width: 200px; 
+}
+
+
+.price-filter {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.price-filter-btn {
+    background: white;
+    border: 1px solid tomato;
+    border-radius: 4px;
+    padding: 10px;
+    color: tomato;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100px;
+}
+
+.price-filter-btn:hover {
+    border: 1px solid #e04a1f;
+}
+
+.price-range-container {
+    margin-top: 10px;
+}
+
+.price-range-container label {
+    margin-bottom: 5px;
+}
+
+.price-range-container input {
+    width: 100%; 
+    margin-top: 10px;
+    -webkit-appearance: none;
+    background: tomato;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.price-range-container input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: white;
+    border: 2px solid tomato;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-range-container input::-moz-range-thumb {
+    background: white;
+    border: 2px solid tomato;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-container {
+    position: relative;
+    max-width: 100%; 
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline-color: tomato;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+.search-container .search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: tomato;
+    font-size: 16px;
+    padding: 0;
+}
+
+.search-container .search-btn i {
+    pointer-events: none;
+}
+
+.food-display-content {
+    flex: 3; 
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Ensure positioning of the no-items-wrapper is within this context */
+}
+
+.food-list-heading {
+    font-size: max(2vw, 20px);
+    color: #262626;
+    font-weight: 500;
+    margin-bottom: 10px;
+    position: sticky;
+}
+
+.food-list-count {
+    font-size: max(1vw, 16px);
+    margin-bottom: 20px;
+    color: #333; 
+    font-weight: 500; 
+    background-color: #f9f9f9; 
+    padding: 10px 15px;
+    border-radius: 4px; 
+    border: 1px solid #ddd; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.food-list-count:hover {
+    background-color: #f0f0f0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.food-list-count span {
+    font-size: 1.2em;
+    color: tomato; 
+    font-weight: bold; 
+    margin-right: 5px;
+    margin-bottom: 1px;
+}
+
+.food-display-list {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    row-gap: 50px;
+    position: relative; /* Position context for centering no-items-wrapper */
+}
+
+.no-items-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100%; /* Ensure it takes full height of the parent */
+    width: 100%; /* Ensure it takes full width of the parent */
+    text-align: center; /* Center text horizontally */
+    padding: 20px;
+    background: white; /* Ensure background color is visible */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.no-items {
+    width: 200px;
+    height: auto;
+}
+
+.no-items-wrapper p {
+    margin-top: 10px;
+    font-size: max(1vw, 14px);
+    color: #666;
+}
+
+
+.food-display hr {
+    margin: 10px 0; 
+    height: 2px; 
+    background-color: #e2e2e2; 
+    border: none; 
+    width: 100%; 
+}
+
+@media (max-width: 768px) {
+    .food-display {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .filter {
+        flex: none; 
+        min-width: 100%; 
+    }
+
+    .search-container input {
+        padding-right: 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container input {
+        padding-right: 30px; 
+    }
+
+    .price-filter-btn {
+        width: 80px; 
+    }
+
+    .food-list-heading {
+        font-size: 18px; 
+    }
+
+    .food-list-count {
+        font-size: 12px; 
+    }
+}
